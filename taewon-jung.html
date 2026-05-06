@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>열심히 살자 | PCU Portfolio</title>
+  <meta name="description" content="소프트웨어공학부 - 컴퓨터공학전공 · 열심히 살자"/>
+  <meta property="og:title" content="열심히 살자"/>
+  <meta property="og:description" content="소프트웨어공학부 - 컴퓨터공학전공"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:     #060d14;
+      --accent: #00c8ff;
+      --glow:   #00c8ff33;
+      --tag:    #0a1f2e;
+      --text:   #efefef;
+      --muted:  #666;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans KR', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── HERO */
+    .hero {
+      position: relative;
+      padding: 5rem 2.5rem 3.5rem;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, var(--glow) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+      opacity: 0.85;
+    }
+    .hero-id {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 12vw, 7rem);
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      line-height: 0.95;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 40px var(--glow);
+    }
+    .hero-desc {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 300;
+      opacity: 0.8;
+      max-width: 540px;
+      line-height: 1.5;
+    }
+    .hero-meta {
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── BODY */
+    .body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem 2.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ── CARD */
+    .card {
+      border: 1px solid rgba(255,255,255,0.07);
+      border-left: 3px solid var(--accent);
+      background: rgba(255,255,255,0.025);
+      border-radius: 0 4px 4px 0;
+      padding: 1.5rem 1.75rem;
+    }
+    .card-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+      opacity: 0.8;
+    }
+    .card-value {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      opacity: 0.88;
+    }
+    a.card-link {
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+      border-bottom: 1px dashed transparent;
+      transition: border-color 0.2s;
+    }
+    a.card-link:hover { border-color: var(--accent); }
+
+    /* ── TAGS */
+    .tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .tag {
+      background: var(--tag);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.78rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: 2px;
+      opacity: 0.85;
+    }
+
+    /* ── COMPANY ROW */
+    .company-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .company-box {
+      background: var(--tag);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 4px;
+      padding: 1.1rem 1.25rem;
+    }
+    .company-box .cl { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.45rem; }
+    .company-box .cn { font-size: 1rem; font-weight: 700; color: var(--accent); }
+
+    /* ── FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem 2.5rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; opacity: 0.6; }
+
+    @media (max-width: 540px) {
+      .hero { padding: 3.5rem 1.5rem 2.5rem; }
+      .body { padding: 1rem 1.5rem 3rem; }
+      .company-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">배재대학교 전공탐색 박람회</div>
+  <div class="hero-id">taewon-jung</div>
+  <div class="hero-desc">열심히 살자</div>
+  <div class="hero-meta">소프트웨어공학부 - 컴퓨터공학전공 · 정태원</div>
+</div>
+
+<div class="body">
+
+  
+
+  
+  <div class="card">
+    <div class="card-label">나의 강점</div>
+    <div class="card-value">분석형 — 데이터와 논리로 문제를 풀어가는 것을 좋아해요</div>
+  </div>
+
+  
+  <div class="card">
+    <div class="card-label">목표</div>
+    <div class="card-value">사회적 가치를 만드는 일</div>
+  </div>
+
+  
+  <div class="card">
+    <div class="card-label">포트폴리오</div>
+    <div class="card-value">
+      AI solution 개발
+    </div>
+  </div>
+
+  
+  <div class="card">
+    <div class="card-label">기업 방향</div>
+    <div class="company-row">
+      <div class="company-box"><div class="cl">벤치마킹 기업</div><div class="cn">Antrophic</div></div>
+      <div class="company-box"><div class="cl">목표 기업</div><div class="cn">Antrophic</div></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span>pcuportfolio.kro.kr/taewon-jung · 2026년 5월 6일</span>
+  <a href="https://pcu-startup.netlify.app" target="_blank">배재대학교 창업지원팀</a>
+</footer>
+
+</body>
+</html>
