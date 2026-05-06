@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ddddddd | PCU Portfolio</title>
+  <meta name="description" content="심리상담학과 · ddddddd"/>
+  <meta property="og:title" content="ddddddd"/>
+  <meta property="og:description" content="당근 스타일 · 심리상담학과"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:      #1a0f00;
+      --surface: #2a1800;
+      --accent:  #ff7002;
+      --accent2: #ff9634;
+      --text:    #fff8f0;
+      --muted:   #8a6040;
+      --tag:     #2e1a00;
+      --glow:    #ff700233;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg); color:var(--text); font-family:'Noto Sans KR',sans-serif; min-height:100vh; }
+
+    .hero {
+      position:relative; padding:5rem 2.5rem 4rem; overflow:hidden;
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+    .hero::before {
+      content:''; position:absolute; top:-80px; right:-80px;
+      width:450px; height:450px;
+      background:radial-gradient(circle, var(--glow) 0%, transparent 65%);
+      pointer-events:none;
+    }
+    .badge {
+      display:inline-block; border:1px solid var(--accent); color:var(--accent);
+      font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase;
+      padding:0.25rem 0.8rem; border-radius:2px; margin-bottom:1.5rem; opacity:0.8;
+    }
+    .hero-tagline { font-size:0.85rem; color:var(--muted); margin-bottom:0.5rem; font-weight:300; }
+    .hero-id {
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(4rem,14vw,8rem);
+      color:var(--accent); letter-spacing:0.03em; line-height:0.92;
+      margin-bottom:1rem; text-shadow:0 0 60px var(--glow);
+    }
+    .hero-desc { font-size:clamp(1rem,2.5vw,1.35rem); font-weight:300; opacity:0.85; max-width:520px; line-height:1.5; }
+    .hero-meta { margin-top:1.25rem; font-size:0.75rem; color:var(--muted); letter-spacing:0.08em; text-transform:uppercase; }
+    .keywords { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.5rem; }
+    .keyword {
+      background:var(--tag); border:1px solid rgba(255,255,255,0.1);
+      font-size:0.75rem; padding:0.3rem 0.8rem; border-radius:2px;
+      color:var(--accent); font-weight:700; letter-spacing:0.05em;
+    }
+
+    .body { max-width:720px; margin:0 auto; padding:2.5rem 2.5rem 5rem; display:flex; flex-direction:column; gap:1.25rem; }
+    .card {
+      border:1px solid rgba(255,255,255,0.07); border-left:3px solid var(--accent);
+      background:rgba(255,255,255,0.025); border-radius:0 4px 4px 0; padding:1.5rem 1.75rem;
+    }
+    .card-label { font-size:0.58rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent); margin-bottom:0.6rem; opacity:0.75; }
+    .card-value { font-size:0.92rem; line-height:1.75; opacity:0.88; }
+    .tags { display:flex; flex-wrap:wrap; gap:0.4rem; }
+    .tag { background:var(--tag); border:1px solid rgba(255,255,255,0.08); font-size:0.78rem; padding:0.28rem 0.7rem; border-radius:2px; opacity:0.85; }
+    .style-badge {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      background:var(--tag); border:1px solid var(--accent);
+      border-radius:4px; padding:0.75rem 1.25rem; font-size:0.8rem; color:var(--accent); font-weight:700;
+    }
+
+    footer {
+      border-top:1px solid rgba(255,255,255,0.07); padding:1.75rem 2.5rem;
+      font-size:0.7rem; color:var(--muted);
+      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;
+    }
+    footer a { color:var(--accent); text-decoration:none; opacity:0.6; }
+
+    @media(max-width:540px){
+      .hero { padding:3.5rem 1.5rem 3rem; }
+      .body { padding:2rem 1.5rem 4rem; }
+      footer { flex-direction:column; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">배재대학교 · 전공탐색 박람회 2026 · 당근 스타일</div>
+  <div class="hero-tagline">사람과 사회를 깊이 이해하는</div>
+  <div class="hero-id">qwer</div>
+  <div class="hero-desc">ddddddd</div>
+  <div class="hero-meta">심리상담학과 · 분석형</div>
+  <div class="keywords"><span class="keyword">#데이터분석</span><span class="keyword">#논리적사고</span><span class="keyword">#문제해결</span></div>
+</div>
+
+<div class="body">
+  
+  <div class="card">
+    <div class="card-label">관심 분야</div>
+    <div class="tags"><span class="tag">금융·투자</span></div>
+  </div>
+
+  
+  <div class="card">
+    <div class="card-label">강점 스타일</div>
+    <div class="card-value">분석형 — 데이터와 논리로 문제를 풀어갑니다</div>
+  </div>
+
+  
+  <div class="card">
+    <div class="card-label">롤모델 기업</div>
+    <div style="margin-top:0.25rem">
+      <span class="style-badge">🏢 유치원/어린이집</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>pcuportfolio.kro.kr/qwer · 2026년 5월 6일</span>
+  <a href="https://pcu-startup.netlify.app" target="_blank">배재대학교 창업지원팀</a>
+</footer>
+
+</body>
+</html>
