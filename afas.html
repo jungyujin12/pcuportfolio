@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>한줄 | PCU Portfolio</title>
+  <meta name="description" content="기타 · 한줄"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#001a08;color:#f0fff8;font-family:'Noto Sans KR',sans-serif;min-height:100vh}
+    .topbar{background:#03c75a;padding:0.6rem 2rem;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;color:#000}
+    .layout{display:grid;grid-template-columns:300px 1fr;min-height:calc(100vh - 40px)}
+    .sidebar{background:#002e10;padding:3rem 2rem;border-right:1px solid #1e0010}
+    .sidebar .id{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:#03c75a;letter-spacing:0.04em;line-height:1;margin-bottom:1rem}
+    .sidebar .desc{font-size:0.9rem;font-weight:300;opacity:0.8;line-height:1.6;margin-bottom:1.5rem}
+    .sidebar .meta{font-size:0.7rem;color:#4d8060;letter-spacing:0.05em}
+    .sidebar .kws{display:flex;flex-direction:column;gap:0.3rem;margin-top:1.5rem}
+    .kw{font-size:0.72rem;color:#ec407a;font-weight:700}
+    .main{padding:3rem 2.5rem}
+    .section{margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid #003d18}
+    .section:last-child{border-bottom:none}
+    .sec-label{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:#ec407a;margin-bottom:0.6rem}
+    .sec-value{font-size:0.92rem;line-height:1.7;opacity:0.85}
+    .tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+    .tag{background:#003d18;font-size:0.75rem;padding:0.25rem 0.7rem;border-radius:2px;color:#6ee7b7}
+    footer{background:#002e10;padding:1.25rem 2.5rem;font-size:0.65rem;color:#4d8060;display:flex;justify-content:space-between;border-top:1px solid #003d18}
+    footer a{color:#ec407a;text-decoration:none;opacity:0.7}
+    @media(max-width:700px){.layout{grid-template-columns:1fr}.sidebar{padding:2rem 1.5rem}.main{padding:2rem 1.5rem}}
+  </style>
+</head>
+<body>
+  <div class="topbar">배재대학교 · 전공탐색 박람회 2026 · 네이버 스타일</div>
+  <div class="layout">
+    <div class="sidebar">
+      <div class="id">afas</div>
+      <div class="desc">한줄</div>
+      <div class="meta">기타</div>
+      <div class="kws"><span class="kw">→ 기획력</span><span class="kw">→ 창의성</span><span class="kw">→ 미래지향</span></div>
+    </div>
+    <div class="main">
+      <div class="section"><div class="sec-label">관심 분야</div><div class="tags"><span class="tag">환경·지속가능</span><span class="tag">식품·F&B</span><span class="tag">하드웨어·제조</span></div></div>
+      <div class="section"><div class="sec-label">강점 스타일</div><div class="sec-value">아이디어형</div></div>
+      <div class="section"><div class="sec-label">롤모델 기업</div><div class="sec-value">네이버</div></div>
+    </div>
+  </div>
+  <footer><span>pcuportfolio.kro.kr/afas · 2026년 5월 7일</span><a href="https://pcu-startup.netlify.app" target="_blank">배재대학교 창업지원팀</a></footer>
+</body></html>
