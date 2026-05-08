@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>데이터로 부넛ㄱ하는분석가 | PCU Portfolio</title>
+  <meta name="description" content="글로벌비즈니스학과 · 데이터로 부넛ㄱ하는분석가"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#f5f5f5;color:#1a0000;font-family:'Noto Sans KR',sans-serif;min-height:100vh}
+    .topbar{background:#cc0000;color:#fff;padding:0.5rem 2rem;font-size:0.65rem;letter-spacing:0.05em;display:flex;justify-content:space-between}
+    .hero-banner{background:linear-gradient(135deg,#cc0000,#990000);color:#fff;padding:4rem 3rem;position:relative;overflow:hidden}
+    .hero-banner::before{content:'LOTTE';position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Bebas Neue',sans-serif;font-size:15vw;color:rgba(255,255,255,0.05);letter-spacing:0.05em;pointer-events:none}
+    .badge{font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:1rem;display:block}
+    .hero-id{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,12vw,7rem);color:#fff;letter-spacing:0.04em;line-height:0.92;position:relative}
+    .hero-desc{font-size:1rem;font-weight:300;margin-top:0.75rem;opacity:0.88;line-height:1.6;position:relative}
+    .hero-meta{font-size:0.7rem;color:rgba(255,255,255,0.6);margin-top:0.5rem;position:relative}
+    .sale-badge{display:inline-block;background:#fff;color:#cc0000;font-size:0.7rem;font-weight:900;padding:0.2rem 0.6rem;margin-left:0.5rem;letter-spacing:0.05em}
+    .kws{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:1rem;position:relative}
+    .kw{font-size:0.7rem;background:rgba(255,255,255,0.15);color:#fff;padding:0.25rem 0.7rem;font-weight:700}
+    .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:2rem;background:#f5f5f5}
+    .product-card{background:#fff;border-radius:4px;padding:1.5rem;box-shadow:0 1px 4px rgba(0,0,0,0.08)}
+    .product-label{font-size:0.55rem;letter-spacing:0.18em;text-transform:uppercase;color:#00e676;margin-bottom:0.4rem;font-weight:700}
+    .product-value{font-size:0.88rem;line-height:1.6;color:#1a0000}
+    .tags{display:flex;flex-wrap:wrap;gap:0.3rem}
+    .tag{background:#fff0f0;font-size:0.7rem;padding:0.15rem 0.5rem;border-radius:2px;color:#00e676}
+    footer{background:#1a0000;color:rgba(255,255,255,0.3);padding:1.25rem 2rem;font-size:0.65rem;display:flex;justify-content:space-between}
+    footer a{color:#00e676;text-decoration:none;opacity:0.7}
+    @media(max-width:700px){.product-grid{grid-template-columns:1fr 1fr}.hero-banner{padding:3rem 1.5rem}}
+  </style>
+</head><body>
+  <div class="topbar"><span>배재대학교 · 전공탐색 박람회 2026</span><span>롯데 스타일</span></div>
+  <div class="hero-banner">
+    <span class="badge">MY PORTFOLIO</span>
+    <div class="hero-id">451863<span class="sale-badge">NEW</span></div>
+    <div class="hero-desc" style="font-size:0.8rem;opacity:0.5;margin-top:0.5rem;letter-spacing:0.05em">451863</div>
+    <div class="hero-meta">글로벌비즈니스학과 · 분석형</div>
+    <div style="font-size:0.82rem;color:#00e676;margin-top:0.5rem;font-style:italic;opacity:0.85">"데이터로 헬스케어를 혁신하다"</div>
+    <div style="font-size:0.92rem;opacity:0.7;margin-top:0.4rem;font-weight:300;font-style:italic">분석의 힘으로 더 나은 미래를 설계합니다</div>
+    <div class="kws"><span class="kw">#데이터분석</span><span class="kw">#논리적사고</span><span class="kw">#문제해결</span></div>
+  </div>
+  <div class="product-grid">
+    <div class="product-card"><div class="product-label">관심 분야</div><div class="tags"><span class="tag">헬스케어</span></div></div>
+    <div class="product-card"><div class="product-label">강점 스타일</div><div class="product-value">분석형</div></div>
+    <div class="product-card"><div class="product-label">롤모델 기업</div><div class="product-value">롯데</div></div>
+  </div>
+  
+  <style>
+    .pcu-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;cursor:pointer;}
+    .pcu-modal-overlay.active{display:flex;}
+    .pcu-modal-img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px;cursor:default;}
+    .pcu-modal-close{position:fixed;top:1.25rem;right:1.5rem;color:#fff;font-size:2rem;cursor:pointer;opacity:0.8;line-height:1;z-index:10000;}
+    .pcu-modal-prev,.pcu-modal-next{position:fixed;top:50%;transform:translateY(-50%);color:#fff;font-size:2.5rem;cursor:pointer;opacity:0.7;z-index:10000;padding:0.5rem;user-select:none;}
+    .pcu-modal-prev{left:1rem;} .pcu-modal-next{right:1rem;}
+    .pcu-clickable{cursor:zoom-in;}
+  </style>
+  <div class="pcu-modal-overlay" id="pcuModal" onclick="pcuModalClose(event)">
+    <span class="pcu-modal-close" onclick="pcuModalHide()">×</span>
+    <span class="pcu-modal-prev" onclick="pcuModalPrev(event)">‹</span>
+    <img class="pcu-modal-img" id="pcuModalImg" src="" alt="사진"/>
+    <span class="pcu-modal-next" onclick="pcuModalNext(event)">›</span>
+  </div>
+  <script>
+    var _pcuPhotos = [], _pcuIdx = 0;
+    function pcuOpenModal(idx) {
+      _pcuIdx = idx;
+      document.getElementById('pcuModalImg').src = _pcuPhotos[idx];
+      document.getElementById('pcuModal').classList.add('active');
+    }
+    function pcuModalHide() { document.getElementById('pcuModal').classList.remove('active'); }
+    function pcuModalClose(e) { if(e.target===document.getElementById('pcuModal')) pcuModalHide(); }
+    function pcuModalPrev(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx-1+_pcuPhotos.length)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    function pcuModalNext(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx+1)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') pcuModalHide(); if(e.key==='ArrowLeft') pcuModalPrev(e); if(e.key==='ArrowRight') pcuModalNext(e); });
+  </script><div class="extra-sections" style="padding-bottom:3rem;">
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;display:flex;flex-wrap:wrap;gap:0.75rem;">
+    <div style="flex:1;min-width:180px;border-left:3px solid #00e676;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#00e676;margin-bottom:0.4rem;font-weight:700">관심 분야</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.3rem;"><span class="tag">헬스케어</span></div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #00e676;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#00e676;margin-bottom:0.4rem;font-weight:700">강점 스타일</div>
+      <div style="font-size:0.88rem;opacity:0.9;">분석형</div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #00e676;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#00e676;margin-bottom:0.4rem;font-weight:700">롤모델 기업</div>
+      <div style="font-size:0.88rem;opacity:0.9;">롯데</div>
+    </div>
+  </div>
+    <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00e676;">
+      <div style="font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:#00e676;margin-bottom:0.75rem;font-weight:700;opacity:0.8">내가 가진 것들</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+        <span style="background:#00e67618;border:1px solid #00e67644;font-size:0.78rem;padding:0.22rem 0.65rem;color:#00e676;font-weight:600;letter-spacing:0.04em;">파이썬고급</span><span style="background:#00e67618;border:1px solid #00e67644;font-size:0.78rem;padding:0.22rem 0.65rem;color:#00e676;font-weight:600;letter-spacing:0.04em;">자바고급</span><span style="background:#00e67618;border:1px solid #00e67644;font-size:0.78rem;padding:0.22rem 0.65rem;color:#00e676;font-weight:600;letter-spacing:0.04em;">또래상담사 자격증</span><span style="background:#00e67618;border:1px solid #00e67644;font-size:0.78rem;padding:0.22rem 0.65rem;color:#00e676;font-weight:600;letter-spacing:0.04em;">창직지도사2급</span><span style="background:#00e67618;border:1px solid #00e67644;font-size:0.78rem;padding:0.22rem 0.65rem;color:#00e676;font-weight:600;letter-spacing:0.04em;">응급구조사자격증</span><span style="background:#00e67618;border:1px solid #00e67644;font-size:0.78rem;padding:0.22rem 0.65rem;color:#00e676;font-weight:600;letter-spacing:0.04em;">창업지도사2급</span>
+      </div>
+    </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00e676;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#00e676;margin-bottom:0.4rem;font-weight:700">나아갈 방향</div>
+    <div style="font-size:1.1rem;font-weight:700;opacity:0.92">지정바람</div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00e676;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#00e676;margin-bottom:0.6rem;font-weight:700">함께한 시간들</div>
+    <div style="font-size:0.88rem;line-height:1.8;opacity:0.88;white-space:pre-line;">- 배재대 창업지원팀2년재직
+- 개발경력6년
+- 또래상담사 3년</div>
+  </div>
+    <div style="max-width:720px;margin:0 auto;padding:1.75rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00e676;">
+      <div style="font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:#00e676;margin-bottom:0.6rem;font-weight:700;opacity:0.8">나를 움직이는 것</div>
+      <div style="font-size:0.9rem;line-height:1.8;opacity:0.85;white-space:pre-line">데이터 분석으로 다양한 분야의 문제를 풀고 싶습니다. 특히 헬스케어 산업에서 데이터 기반 인사이트를 제공하는 분석가가 되어 사람들의 삶에 긍정적 변화를 만들고 싶습니다.</div>
+    </div></div>
+  <footer><span>pcuportfolio.kro.kr/451863 · 2026년 5월 8일</span><a href="https://pcu-startup.netlify.app" target="_blank">배재대학교 창업지원팀</a></footer>
+</body></html>
