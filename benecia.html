@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>철저한 자기관리와 책임감으로 맡은 바 임무를 완수했어요 | PCU Portfolio</title>
+  <meta name="description" content="경찰법학부 · 철저한 자기관리와 책임감으로 맡은 바 임무를 완수했어요"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#f5f7fa;color:#0a1628;font-family:'Noto Sans KR',sans-serif;min-height:100vh}
+    .topbar{background:#003366;color:#fff;padding:0.7rem 2rem;display:flex;align-items:center;gap:1rem}
+    .topbar-logo{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.1em}
+    .topbar-sub{font-size:0.6rem;letter-spacing:0.1em;opacity:0.7}
+    .hero{background:#fff;border-bottom:3px solid #003366;padding:3.5rem 3rem 2.5rem}
+    .hero-id{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,5.5rem);color:#003366;letter-spacing:0.05em;line-height:0.95}
+    .hero-desc{font-size:0.95rem;margin-top:0.75rem;color:#1a3050;line-height:1.7;max-width:560px}
+    .hero-meta{font-size:0.72rem;color:#4a6080;margin-top:0.5rem;letter-spacing:0.05em}
+    .kws{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.75rem}
+    .kw{font-size:0.68rem;background:#7c4dff;color:#fff;padding:0.2rem 0.65rem;font-weight:700;letter-spacing:0.05em}
+    .body{max-width:800px;margin:0 auto;padding:2rem 3rem;display:flex;flex-direction:column;gap:0}
+    .card{background:#fff;border:1px solid #dce4ef;padding:1.5rem 2rem;margin-bottom:1px}
+    .card-label{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:#7c4dff;margin-bottom:0.5rem;font-weight:700}
+    .card-value{font-size:0.9rem;line-height:1.7;color:#1a3050}
+    .tags{display:flex;flex-wrap:wrap;gap:0.35rem}
+    .tag{background:#0e0028;border:1px solid #7c4dff33;font-size:0.72rem;padding:0.2rem 0.6rem;color:#7c4dff}
+    footer{background:#7c4dff;color:rgba(255,255,255,0.5);padding:1.25rem 3rem;font-size:0.65rem;display:flex;justify-content:space-between;margin-top:2rem}
+    footer a{color:rgba(255,255,255,0.7);text-decoration:none}
+    @media(max-width:540px){.hero,.body{padding-left:1.5rem;padding-right:1.5rem}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-logo">PCU PORTFOLIO</div>
+    <div class="topbar-sub">배재대학교 전공탐색 박람회 2026</div>
+  </div>
+  <div class="hero">
+    <div class="hero-id">철저한 자기관리와 책임감으로 맡은 바 임무를 완수했어요</div>
+    <div class="hero-desc" style="font-size:0.8rem;opacity:0.5;margin-top:0.5rem;letter-spacing:0.05em">benecia</div>
+    <div class="hero-meta">경찰법학부 · 실행형</div>
+    <div style="font-size:0.82rem;color:#7c4dff;margin-top:0.5rem;font-style:italic;opacity:0.85">"질서를 지키는 실행형 리더"</div>
+    <div style="font-size:0.92rem;opacity:0.7;margin-top:0.4rem;font-weight:300;font-style:italic">책임감으로 사회 안전을 만듭니다</div>
+    <div class="kws"><span class="kw">#실행력</span><span class="kw">#추진력</span><span class="kw">#결과중심</span></div>
+  </div>
+  <div class="body">
+  </div>
+  
+  <style>
+    .pcu-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;cursor:pointer;}
+    .pcu-modal-overlay.active{display:flex;}
+    .pcu-modal-img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px;cursor:default;}
+    .pcu-modal-close{position:fixed;top:1.25rem;right:1.5rem;color:#fff;font-size:2rem;cursor:pointer;opacity:0.8;line-height:1;z-index:10000;}
+    .pcu-modal-prev,.pcu-modal-next{position:fixed;top:50%;transform:translateY(-50%);color:#fff;font-size:2.5rem;cursor:pointer;opacity:0.7;z-index:10000;padding:0.5rem;user-select:none;}
+    .pcu-modal-prev{left:1rem;} .pcu-modal-next{right:1rem;}
+    .pcu-clickable{cursor:zoom-in;}
+  </style>
+  <div class="pcu-modal-overlay" id="pcuModal" onclick="pcuModalClose(event)">
+    <span class="pcu-modal-close" onclick="pcuModalHide()">×</span>
+    <span class="pcu-modal-prev" onclick="pcuModalPrev(event)">‹</span>
+    <img class="pcu-modal-img" id="pcuModalImg" src="" alt="사진"/>
+    <span class="pcu-modal-next" onclick="pcuModalNext(event)">›</span>
+  </div>
+  <script>
+    var _pcuPhotos = [], _pcuIdx = 0;
+    function pcuOpenModal(idx) {
+      _pcuIdx = idx;
+      document.getElementById('pcuModalImg').src = _pcuPhotos[idx];
+      document.getElementById('pcuModal').classList.add('active');
+    }
+    function pcuModalHide() { document.getElementById('pcuModal').classList.remove('active'); }
+    function pcuModalClose(e) { if(e.target===document.getElementById('pcuModal')) pcuModalHide(); }
+    function pcuModalPrev(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx-1+_pcuPhotos.length)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    function pcuModalNext(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx+1)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') pcuModalHide(); if(e.key==='ArrowLeft') pcuModalPrev(e); if(e.key==='ArrowRight') pcuModalNext(e); });
+  </script><div class="extra-sections" style="padding-bottom:3rem;">
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;display:flex;flex-wrap:wrap;gap:0.75rem;">
+    <div style="flex:1;min-width:180px;border-left:3px solid #7c4dff;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#7c4dff;margin-bottom:0.4rem;font-weight:700">관심 분야</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.3rem;"><span class="tag">콘텐츠·미디어</span><span class="tag">헬스케어</span><span class="tag">교육·코칭</span><span class="tag">패션·뷰티</span><span class="tag">환경·지속가능</span><span class="tag">금융·투자</span><span class="tag">사회·복지</span><span class="tag">식품·F&B</span><span class="tag">하드웨어·제조</span></div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #7c4dff;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#7c4dff;margin-bottom:0.4rem;font-weight:700">강점 스타일</div>
+      <div style="font-size:0.88rem;opacity:0.9;">실행형</div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #7c4dff;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#7c4dff;margin-bottom:0.4rem;font-weight:700">롤모델 기업</div>
+      <div style="font-size:0.88rem;opacity:0.9;">경찰청</div>
+    </div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem;font-family:'Noto Sans KR',sans-serif;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#7c4dff;margin-bottom:0.6rem;font-weight:700">나를 움직이는 것</div>
+    <div style="font-size:0.9rem;line-height:1.8;opacity:0.88;white-space:pre-line;border-left:3px solid #7c4dff;padding-left:1rem;">책임감 있는 태도로 최선의 결과를 만드는 지원자입니다. 군 경험과 성실한 학업으로 다진 협동심을 바탕으로 조직의 목표 달성에 기여하겠습니다.</div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#7c4dff;margin-bottom:0.6rem;font-weight:700">내가 가진 것들</div>
+    <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+      <span style="background:#7c4dff15;border:1px solid #7c4dff44;font-size:0.78rem;padding:0.25rem 0.7rem;border-radius:3px;color:#7c4dff;font-weight:600;">운전면허증</span><span style="background:#7c4dff15;border:1px solid #7c4dff44;font-size:0.78rem;padding:0.25rem 0.7rem;border-radius:3px;color:#7c4dff;font-weight:600;">태권도 3단</span><span style="background:#7c4dff15;border:1px solid #7c4dff44;font-size:0.78rem;padding:0.25rem 0.7rem;border-radius:3px;color:#7c4dff;font-weight:600;">유도 1단</span>
+    </div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #7c4dff;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#7c4dff;margin-bottom:0.6rem;font-weight:700">함께한 경험들</div>
+    <div style="font-size:0.88rem;line-height:1.8;opacity:0.88;white-space:pre-line;">- 군 생활 분대장으로 팀 리더십 경험
+- 또래상담자로 6개월간 소통 역량 강화
+- 캠퍼스 폴리스 조장으로 학내 안전 주도
+- 교환학생으로 국제 감각 배양</div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #7c4dff;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#7c4dff;margin-bottom:0.4rem;font-weight:700">가고 싶은 곳</div>
+    <div style="font-size:1.1rem;font-weight:700;opacity:0.92">사회 안전을 지키는 경찰관</div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem 0;font-family:'Noto Sans KR',sans-serif;text-align:center;">
+    <div style="font-size:0.92rem;color:#7c4dff;font-style:italic;opacity:0.85;padding:1.25rem;border-top:1px solid #7c4dff22;">"신속한 실행력으로 신뢰받는 경찰관이 되겠습니다."</div>
+  </div></div>
+  <footer><span>pcuportfolio.kro.kr/benecia · 2026년 5월 8일</span><a href="https://pcu-startup.netlify.app" target="_blank">배재대학교 창업지원팀</a></footer>
+</body></html>
