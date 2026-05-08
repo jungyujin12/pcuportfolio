@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>저는 데이터분석에 관심이많고 컴퓨터공학전공이지만 다양한 분야에서 이를활용 | PCU Portfolio</title>
+  <meta name="description" content="국어국문한국어교육학과 · 저는 데이터분석에 관심이많고 컴퓨터공학전공이지만 다양한 분야에서 이를활용"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#fdf8f0;color:#2a1a00;font-family:'Noto Sans KR',sans-serif;min-height:100vh}
+    .hero{background:#fff;border-bottom:3px solid #d4a853;padding:4.5rem 3rem 3rem;position:relative}
+    .hero::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#d4a853,#f0c060,#d4a853)}
+    .badge{font-size:0.6rem;letter-spacing:0.15em;color:#ffca28;margin-bottom:1.5rem;display:block;font-weight:500}
+    .hero-id{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,10vw,6.5rem);color:#ffca28;letter-spacing:0.04em;line-height:0.95}
+    .hero-desc{font-size:1rem;font-weight:300;margin-top:0.75rem;color:#4a2e00;line-height:1.7;max-width:500px}
+    .hero-meta{font-size:0.72rem;color:#a07830;margin-top:0.5rem;letter-spacing:0.05em}
+    .kws{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:1rem}
+    .kw{font-size:0.7rem;background:#1e1800;color:#ffca28;padding:0.25rem 0.7rem;border-radius:4px;font-weight:700;border:1px solid #ffca2833}
+    .cards{max-width:640px;margin:0 auto;padding:2.5rem 3rem;display:flex;flex-direction:column;gap:1rem}
+    .card{background:#fff;border:1px solid #ead4a0;border-radius:8px;padding:1.5rem 1.75rem}
+    .card-label{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:#ffca28;margin-bottom:0.5rem;font-weight:700}
+    .card-value{font-size:0.9rem;line-height:1.7;color:#3a2000}
+    .tags{display:flex;flex-wrap:wrap;gap:0.35rem}
+    .tag{background:#1e1800;border:1px solid #ffca2833;font-size:0.72rem;padding:0.2rem 0.65rem;border-radius:4px;color:#ffca28}
+    footer{padding:1.5rem 3rem;font-size:0.65rem;color:#c0a070;display:flex;justify-content:space-between;border-top:1px solid #ead4a0}
+    footer a{color:#ffca28;text-decoration:none}
+    @media(max-width:540px){.hero,.cards{padding-left:1.5rem;padding-right:1.5rem}}
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <span class="badge">PCU PORTFOLIO</span>
+    <div class="hero-id">저는 데이터분석에 관심이많고 컴퓨터공학전공이지만 다양한 분야에서 이를활용</div>
+    <div class="hero-desc" style="font-size:0.8rem;opacity:0.5;margin-top:0.5rem;letter-spacing:0.05em">6451</div>
+    <div class="hero-meta">국어국문한국어교육학과 · 아이디어형</div>
+    <div style="font-size:0.82rem;color:#ffca28;margin-top:0.5rem;font-style:italic;opacity:0.85">"데이터로 변화를 만드는 분석가"</div>
+    <div style="font-size:0.92rem;opacity:0.7;margin-top:0.4rem;font-weight:300;font-style:italic">숫자 속에서 사람을 위한 답을 찾습니다</div>
+    <div class="kws"><span class="kw">#기획력</span><span class="kw">#창의성</span><span class="kw">#미래지향</span></div>
+  </div>
+  <div class="cards">
+  </div>
+  
+  <style>
+    .pcu-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;cursor:pointer;}
+    .pcu-modal-overlay.active{display:flex;}
+    .pcu-modal-img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px;cursor:default;}
+    .pcu-modal-close{position:fixed;top:1.25rem;right:1.5rem;color:#fff;font-size:2rem;cursor:pointer;opacity:0.8;line-height:1;z-index:10000;}
+    .pcu-modal-prev,.pcu-modal-next{position:fixed;top:50%;transform:translateY(-50%);color:#fff;font-size:2.5rem;cursor:pointer;opacity:0.7;z-index:10000;padding:0.5rem;user-select:none;}
+    .pcu-modal-prev{left:1rem;} .pcu-modal-next{right:1rem;}
+    .pcu-clickable{cursor:zoom-in;}
+  </style>
+  <div class="pcu-modal-overlay" id="pcuModal" onclick="pcuModalClose(event)">
+    <span class="pcu-modal-close" onclick="pcuModalHide()">×</span>
+    <span class="pcu-modal-prev" onclick="pcuModalPrev(event)">‹</span>
+    <img class="pcu-modal-img" id="pcuModalImg" src="" alt="사진"/>
+    <span class="pcu-modal-next" onclick="pcuModalNext(event)">›</span>
+  </div>
+  <script>
+    var _pcuPhotos = [], _pcuIdx = 0;
+    function pcuOpenModal(idx) {
+      _pcuIdx = idx;
+      document.getElementById('pcuModalImg').src = _pcuPhotos[idx];
+      document.getElementById('pcuModal').classList.add('active');
+    }
+    function pcuModalHide() { document.getElementById('pcuModal').classList.remove('active'); }
+    function pcuModalClose(e) { if(e.target===document.getElementById('pcuModal')) pcuModalHide(); }
+    function pcuModalPrev(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx-1+_pcuPhotos.length)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    function pcuModalNext(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx+1)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') pcuModalHide(); if(e.key==='ArrowLeft') pcuModalPrev(e); if(e.key==='ArrowRight') pcuModalNext(e); });
+  </script><div class="extra-sections" style="padding-bottom:3rem;">
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;display:flex;flex-wrap:wrap;gap:0.75rem;">
+    <div style="flex:1;min-width:180px;border-left:3px solid #ffca28;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#ffca28;margin-bottom:0.4rem;font-weight:700">관심 분야</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.3rem;"><span class="tag">헬스케어</span><span class="tag">환경·지속가능</span><span class="tag">식품·F&B</span></div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #ffca28;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#ffca28;margin-bottom:0.4rem;font-weight:700">강점 스타일</div>
+      <div style="font-size:0.88rem;opacity:0.9;">아이디어형</div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #ffca28;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#ffca28;margin-bottom:0.4rem;font-weight:700">롤모델 기업</div>
+      <div style="font-size:0.88rem;opacity:0.9;">교육부</div>
+    </div>
+  </div>
+    <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem;font-family:'Noto Sans KR',sans-serif;">
+      <div style="font-size:0.58rem;letter-spacing:0.15em;color:#ffca28;margin-bottom:0.6rem;font-weight:700">나를 움직이는 것</div>
+      <div style="font-size:0.92rem;line-height:1.9;color:inherit;opacity:0.88;white-space:pre-line;padding:1.25rem;background:#ffca2808;border-radius:12px;border:1px solid #ffca2822;">데이터 분석을 통해 헬스케어, 환경, 식품 산업의 숨겨진 인사이트를 발견합니다. 수치로 증명하고, 아이디어로 혁신하는 분석가입니다.</div>
+    </div>
+    <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem;font-family:'Noto Sans KR',sans-serif;">
+      <div style="font-size:0.58rem;letter-spacing:0.15em;color:#ffca28;margin-bottom:0.75rem;font-weight:700">함께한 경험들</div>
+      <div style="font-size:0.88rem;line-height:1.9;opacity:0.88;white-space:pre-line;border-left:3px solid #ffca2844;padding-left:1rem;">- 배재대 창업지원팀2년재직
+- 개발경력6년
+- 또래상담사 3년</div>
+    </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#ffca28;margin-bottom:0.6rem;font-weight:700">내가 가진 것들</div>
+    <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+      <span style="background:#ffca2815;border:1px solid #ffca2844;font-size:0.78rem;padding:0.25rem 0.7rem;border-radius:3px;color:#ffca28;font-weight:600;">파이썬고급 자바고급 또래상담사 자격증 창직지도사2급 응급구조사 자격증 창업지도사2급</span>
+    </div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #ffca28;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#ffca28;margin-bottom:0.4rem;font-weight:700">가고 싶은 곳</div>
+    <div style="font-size:1.1rem;font-weight:700;opacity:0.92">지정바람</div>
+  </div></div>
+  <footer><span>pcuportfolio.kro.kr/6451 · 2026년 5월 8일</span><a href="https://pcu-startup.netlify.app" target="_blank">배재대학교 창업지원팀</a></footer>
+</body></html>
