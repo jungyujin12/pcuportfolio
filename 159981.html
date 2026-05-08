@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ㅋㅊㅌㅍ | PCU Portfolio</title>
+  <meta name="description" content="경영학과 · ㅋㅊㅌㅍ"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#e8f5f0;color:#003322;font-family:'Noto Sans KR',sans-serif;min-height:100vh;padding:2rem}
+    .ticket{max-width:720px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,100,60,0.12);overflow:hidden}
+    .ticket-header{background:linear-gradient(135deg,#006644,#00aa66);color:#fff;padding:2rem 2.5rem;position:relative;overflow:hidden}
+    .ticket-header::before{content:'✈';position:absolute;right:2rem;top:50%;transform:translateY(-50%);font-size:8rem;opacity:0.08}
+    .th-badge{font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:0.75rem;display:block}
+    .th-airline{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.15em;margin-bottom:1rem}
+    .th-route{display:flex;align-items:center;gap:1.5rem}
+    .th-city{text-align:center}
+    .th-code{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:0.05em;line-height:1}
+    .th-city-name{font-size:0.65rem;opacity:0.7;margin-top:0.2rem}
+    .th-arrow{font-size:1.5rem;opacity:0.6}
+    .ticket-info{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px dashed #c0e8d8}
+    .ti-cell{padding:1.25rem 1.5rem;border-right:1px solid #e8f5f0}
+    .ti-cell:last-child{border-right:none}
+    .ti-label{font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:#00e676;margin-bottom:0.3rem;font-weight:700}
+    .ti-value{font-size:0.82rem;color:#003322;line-height:1.4;font-weight:500}
+    .ticket-tear{display:flex;align-items:center;gap:0;margin:0 -1px}
+    .tear-line{flex:1;border-top:2px dashed #c0e8d8}
+    .tear-circle{width:24px;height:24px;background:#e8f5f0;border-radius:50%;flex-shrink:0}
+    .ticket-body{padding:1.5rem 2.5rem 2rem;display:flex;flex-direction:column;gap:1rem}
+    .tb-section{}
+    .tb-label{font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:#00e676;margin-bottom:0.4rem;font-weight:700}
+    .tb-value{font-size:0.85rem;color:#003322;line-height:1.5}
+    .tags{display:flex;flex-wrap:wrap;gap:0.3rem}
+    .tag{background:#e8f5f0;font-size:0.7rem;padding:0.15rem 0.55rem;border-radius:4px;color:#006644}
+    .kws{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.3rem}
+    .kw{font-size:0.7rem;background:#00e676;color:#fff;padding:0.2rem 0.6rem;border-radius:4px;font-weight:700}
+    footer{padding:1rem 2rem;font-size:0.65rem;color:#80b090;display:flex;justify-content:space-between;border-top:1px solid #e8f5f0}
+    footer a{color:#006644;text-decoration:none}
+    @media(max-width:600px){.ticket-info{grid-template-columns:1fr 1fr}.th-route{gap:0.75rem}}
+  </style>
+</head><body>
+  <div class="ticket">
+    <div class="ticket-header">
+      <span class="th-badge">하나투어 스타일</span>
+      <div class="th-airline">PCU CAREER BOARDING PASS</div>
+      <div class="th-route">
+        <div class="th-city"><div class="th-code">159</div><div class="th-city-name">현재 위치</div></div>
+        <div class="th-arrow">→</div>
+        <div class="th-city"><div class="th-code">DRM</div><div class="th-city-name">꿈의 목적지</div></div>
+      </div>
+    </div>
+    <div class="ticket-info">
+      <div class="ti-cell"><div class="ti-label">탑승자</div><div class="ti-value">159981</div></div>
+      <div class="ti-cell"><div class="ti-label">전공</div><div class="ti-value">경영학과</div></div>
+      <div class="ti-cell"><div class="ti-label">강점</div><div class="ti-value">실행형</div></div>
+      <div class="ti-cell"><div class="ti-label">탑승일</div><div class="ti-value">2026년 5월 8일</div></div>
+    </div>
+    <div class="ticket-tear"><div class="tear-circle"></div><div class="tear-line"></div><div class="tear-circle"></div></div>
+    <div class="ticket-body">
+      <div class="tb-section"><div class="tb-label">한 줄 소개</div><div class="tb-value">ㅋㅊㅌㅍ</div></div>
+      <div class="tb-section"><div class="tb-label">관심 분야</div><div class="tags"><span class="tag">헬스케어</span><span class="tag">금융·투자</span><span class="tag">식품·F&B</span></div></div>
+      <div class="tb-section"><div class="tb-label">핵심 역량</div><div class="kws"><span class="kw">#실행력</span><span class="kw">#추진력</span><span class="kw">#결과중심</span></div></div>
+      <div class="tb-section"><div class="tb-label">롤모델 기업</div><div class="tb-value">하나투어</div></div>
+    </div>
+  </div>
+  
+  <style>
+    .pcu-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;cursor:pointer;}
+    .pcu-modal-overlay.active{display:flex;}
+    .pcu-modal-img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px;cursor:default;}
+    .pcu-modal-close{position:fixed;top:1.25rem;right:1.5rem;color:#fff;font-size:2rem;cursor:pointer;opacity:0.8;line-height:1;z-index:10000;}
+    .pcu-modal-prev,.pcu-modal-next{position:fixed;top:50%;transform:translateY(-50%);color:#fff;font-size:2.5rem;cursor:pointer;opacity:0.7;z-index:10000;padding:0.5rem;user-select:none;}
+    .pcu-modal-prev{left:1rem;} .pcu-modal-next{right:1rem;}
+    .pcu-clickable{cursor:zoom-in;}
+  </style>
+  <div class="pcu-modal-overlay" id="pcuModal" onclick="pcuModalClose(event)">
+    <span class="pcu-modal-close" onclick="pcuModalHide()">×</span>
+    <span class="pcu-modal-prev" onclick="pcuModalPrev(event)">‹</span>
+    <img class="pcu-modal-img" id="pcuModalImg" src="" alt="사진"/>
+    <span class="pcu-modal-next" onclick="pcuModalNext(event)">›</span>
+  </div>
+  <script>
+    var _pcuPhotos = [], _pcuIdx = 0;
+    function pcuOpenModal(idx) {
+      _pcuIdx = idx;
+      document.getElementById('pcuModalImg').src = _pcuPhotos[idx];
+      document.getElementById('pcuModal').classList.add('active');
+    }
+    function pcuModalHide() { document.getElementById('pcuModal').classList.remove('active'); }
+    function pcuModalClose(e) { if(e.target===document.getElementById('pcuModal')) pcuModalHide(); }
+    function pcuModalPrev(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx-1+_pcuPhotos.length)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    function pcuModalNext(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx+1)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') pcuModalHide(); if(e.key==='ArrowLeft') pcuModalPrev(e); if(e.key==='ArrowRight') pcuModalNext(e); });
+  </script><div class="extra-sections" style="padding-bottom:3rem;">
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;display:flex;flex-wrap:wrap;gap:0.75rem;">
+    <div style="flex:1;min-width:180px;border-left:3px solid #00e676;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#00e676;margin-bottom:0.4rem;font-weight:700">관심 분야</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.3rem;"><span class="tag">헬스케어</span><span class="tag">금융·투자</span><span class="tag">식품·F&B</span></div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #00e676;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#00e676;margin-bottom:0.4rem;font-weight:700">강점 스타일</div>
+      <div style="font-size:0.88rem;opacity:0.9;">실행형</div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #00e676;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#00e676;margin-bottom:0.4rem;font-weight:700">롤모델 기업</div>
+      <div style="font-size:0.88rem;opacity:0.9;">하나투어</div>
+    </div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem;font-family:'Noto Sans KR',sans-serif;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#00e676;margin-bottom:0.6rem;font-weight:700">자기소개</div>
+    <div style="font-size:0.9rem;line-height:1.8;opacity:0.88;white-space:pre-line;border-left:3px solid #00e676;padding-left:1rem;">ㅋㅌㅊㅍ</div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00e676;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#00e676;margin-bottom:0.4rem;font-weight:700">희망 직무</div>
+    <div style="font-size:1.1rem;font-weight:700;opacity:0.92">ㅋㅌㅊㅍ</div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#00e676;margin-bottom:0.6rem;font-weight:700">보유 스킬 / 자격증</div>
+    <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+      <span style="background:#00e67615;border:1px solid #00e67644;font-size:0.78rem;padding:0.25rem 0.7rem;border-radius:3px;color:#00e676;font-weight:600;">ㅋㅍㅊㅌ</span>
+    </div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00e676;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#00e676;margin-bottom:0.6rem;font-weight:700">경험 및 활동</div>
+    <div style="font-size:0.88rem;line-height:1.8;opacity:0.88;white-space:pre-line;">ㅋㅊㅌㅍ</div>
+  </div></div>
+  <footer><span>pcuportfolio.kro.kr/159981 · 2026년 5월 8일</span><a href="https://pcu-startup.netlify.app" target="_blank">배재대학교 창업지원팀</a></footer>
+</body></html>
