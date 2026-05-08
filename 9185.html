@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>데이터로 부넛ㄱ하는분석가 | PCU Portfolio</title>
+  <meta name="description" content="조경학과 · 데이터로 부넛ㄱ하는분석가"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#060a0e;color:#e0f0ff;font-family:'Space Mono','Noto Sans KR',monospace;min-height:100vh;overflow-x:hidden}
+    .circuit{position:fixed;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,#00c8ff 0,#00c8ff 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#00c8ff 0,#00c8ff 1px,transparent 1px,transparent 40px);pointer-events:none}
+    .hud-top{background:rgba(0,20,40,0.9);border-bottom:1px solid #00c8ff44;padding:0.75rem 2rem;display:flex;justify-content:space-between;align-items:center;font-size:0.6rem;letter-spacing:0.15em;color:#00c8ff;position:sticky;top:0;z-index:10}
+    .hero{padding:4rem 3rem 3rem;position:relative;z-index:1}
+    .sys-label{font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:#00c8ff;margin-bottom:1rem;opacity:0.7}
+    .hero-id{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,12vw,8rem);color:#00c8ff;letter-spacing:0.04em;line-height:0.9;text-shadow:0 0 60px #00c8ff33}
+    .hero-desc{font-size:0.9rem;margin-top:1rem;color:#a0c0d0;line-height:1.7;max-width:500px;font-family:'Noto Sans KR',sans-serif}
+    .hero-meta{font-size:0.65rem;color:#406070;margin-top:0.6rem;letter-spacing:0.1em}
+    .data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#00c8ff22;margin:2rem 0;position:relative;z-index:1}
+    .data-cell{background:#060a0e;padding:1.5rem 1.75rem;border:1px solid #00c8ff11}
+    .data-label{font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.4rem;opacity:0.7}
+    .data-value{font-size:0.85rem;color:#c0dff0;font-family:'Noto Sans KR',sans-serif;line-height:1.5}
+    .tags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.5rem}
+    .tag{background:#001e2e;border:1px solid #00c8ff33;font-size:0.65rem;padding:0.15rem 0.5rem;color:#00c8ff;letter-spacing:0.05em}
+    .kws{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:1rem;position:relative;z-index:1;padding:0 3rem}
+    .kw{font-size:0.65rem;color:#00c8ff;border:1px solid #00c8ff33;padding:0.2rem 0.6rem;letter-spacing:0.1em}
+    footer{padding:1.5rem 3rem;font-size:0.6rem;color:#204050;display:flex;justify-content:space-between;border-top:1px solid #00c8ff22;position:relative;z-index:1}
+    footer a{color:#00c8ff;text-decoration:none;opacity:0.5}
+    @media(max-width:700px){.data-grid{grid-template-columns:1fr}.hero,.kws{padding-left:1.5rem;padding-right:1.5rem}}
+  </style>
+</head><body>
+  <div class="circuit"></div>
+  <div class="hud-top">
+    <span>SYS: PCU-PORTFOLIO-2026</span>
+    <span>ID: 9185</span>
+    <span>STATUS: ONLINE</span>
+  </div>
+  <div class="hero">
+    <div class="sys-label">SK하이닉스 스타일</div>
+    <div class="hero-id">데이터로 부넛ㄱ하는분석가</div>
+    <div class="hero-desc" style="font-size:0.8rem;opacity:0.5;margin-top:0.5rem;letter-spacing:0.05em">9185</div>
+    <div class="hero-meta">조경학과 · 아이디어형</div>
+  </div>
+  <div class="kws"><span class="kw">#기획력</span><span class="kw">#창의성</span><span class="kw">#미래지향</span></div>
+  <div class="data-grid">
+    <div class="data-cell"><div class="data-label">관심 분야</div><div class="tags"><span class="tag">교육·코칭</span><span class="tag">환경·지속가능</span><span class="tag">사회·복지</span></div></div>
+    <div class="data-cell"><div class="data-label">강점 스타일</div><div class="data-value">아이디어형</div></div>
+    <div class="data-cell"><div class="data-label">롤모델 기업</div><div class="data-value">SK하이닉스</div></div>
+  </div>
+  
+  <style>
+    .pcu-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;cursor:pointer;}
+    .pcu-modal-overlay.active{display:flex;}
+    .pcu-modal-img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px;cursor:default;}
+    .pcu-modal-close{position:fixed;top:1.25rem;right:1.5rem;color:#fff;font-size:2rem;cursor:pointer;opacity:0.8;line-height:1;z-index:10000;}
+    .pcu-modal-prev,.pcu-modal-next{position:fixed;top:50%;transform:translateY(-50%);color:#fff;font-size:2.5rem;cursor:pointer;opacity:0.7;z-index:10000;padding:0.5rem;user-select:none;}
+    .pcu-modal-prev{left:1rem;} .pcu-modal-next{right:1rem;}
+    .pcu-clickable{cursor:zoom-in;}
+  </style>
+  <div class="pcu-modal-overlay" id="pcuModal" onclick="pcuModalClose(event)">
+    <span class="pcu-modal-close" onclick="pcuModalHide()">×</span>
+    <span class="pcu-modal-prev" onclick="pcuModalPrev(event)">‹</span>
+    <img class="pcu-modal-img" id="pcuModalImg" src="" alt="사진"/>
+    <span class="pcu-modal-next" onclick="pcuModalNext(event)">›</span>
+  </div>
+  <script>
+    var _pcuPhotos = [], _pcuIdx = 0;
+    function pcuOpenModal(idx) {
+      _pcuIdx = idx;
+      document.getElementById('pcuModalImg').src = _pcuPhotos[idx];
+      document.getElementById('pcuModal').classList.add('active');
+    }
+    function pcuModalHide() { document.getElementById('pcuModal').classList.remove('active'); }
+    function pcuModalClose(e) { if(e.target===document.getElementById('pcuModal')) pcuModalHide(); }
+    function pcuModalPrev(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx-1+_pcuPhotos.length)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    function pcuModalNext(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx+1)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') pcuModalHide(); if(e.key==='ArrowLeft') pcuModalPrev(e); if(e.key==='ArrowRight') pcuModalNext(e); });
+  </script><div class="extra-sections" style="padding-bottom:3rem;">
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;display:flex;flex-wrap:wrap;gap:0.75rem;">
+    <div style="flex:1;min-width:180px;border-left:3px solid #00c8ff;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.4rem;font-weight:700">관심 분야</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.3rem;"><span class="tag">교육·코칭</span><span class="tag">환경·지속가능</span><span class="tag">사회·복지</span></div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #00c8ff;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.4rem;font-weight:700">강점 스타일</div>
+      <div style="font-size:0.88rem;opacity:0.9;">아이디어형</div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #00c8ff;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.4rem;font-weight:700">롤모델 기업</div>
+      <div style="font-size:0.88rem;opacity:0.9;">SK하이닉스</div>
+    </div>
+  </div>
+    <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00c8ff;">
+      <div style="font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.75rem;font-weight:700;opacity:0.8">내가 가진 것들</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+        <span style="background:#00c8ff18;border:1px solid #00c8ff44;font-size:0.78rem;padding:0.22rem 0.65rem;color:#00c8ff;font-weight:600;letter-spacing:0.04em;">Python 고급</span><span style="background:#00c8ff18;border:1px solid #00c8ff44;font-size:0.78rem;padding:0.22rem 0.65rem;color:#00c8ff;font-weight:600;letter-spacing:0.04em;">Java 고급</span><span style="background:#00c8ff18;border:1px solid #00c8ff44;font-size:0.78rem;padding:0.22rem 0.65rem;color:#00c8ff;font-weight:600;letter-spacing:0.04em;">또래상담사</span><span style="background:#00c8ff18;border:1px solid #00c8ff44;font-size:0.78rem;padding:0.22rem 0.65rem;color:#00c8ff;font-weight:600;letter-spacing:0.04em;">창직지도사 2급</span><span style="background:#00c8ff18;border:1px solid #00c8ff44;font-size:0.78rem;padding:0.22rem 0.65rem;color:#00c8ff;font-weight:600;letter-spacing:0.04em;">창업지도사 2급</span><span style="background:#00c8ff18;border:1px solid #00c8ff44;font-size:0.78rem;padding:0.22rem 0.65rem;color:#00c8ff;font-weight:600;letter-spacing:0.04em;">응급구조사</span>
+      </div>
+    </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00c8ff;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.4rem;font-weight:700">가고 싶은 곳</div>
+    <div style="font-size:1.1rem;font-weight:700;opacity:0.92">사회임팩트 데이터 엔지니어</div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00c8ff;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.6rem;font-weight:700">함께한 시간들</div>
+    <div style="font-size:0.88rem;line-height:1.8;opacity:0.88;white-space:pre-line;">- 배재대 창업지원팀 2년 근무
+- 6년 개발 경력
+- 또래상담사 3년 활동</div>
+  </div>
+    <div style="max-width:720px;margin:0 auto;padding:1.75rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00c8ff;">
+      <div style="font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.6rem;font-weight:700;opacity:0.8">나를 움직이는 것</div>
+      <div style="font-size:0.9rem;line-height:1.8;opacity:0.85;white-space:pre-line">데이터분석 기술로 교육, 환경, 복지 분야의 실질적인 문제를 해결하고 싶습니다. 6년의 개발 경험으로 아이디어를 현실로 만드는 엔지니어입니다.</div>
+    </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem 0;font-family:'Noto Sans KR',sans-serif;text-align:center;">
+    <div style="font-size:0.92rem;color:#00c8ff;font-style:italic;opacity:0.85;padding:1.25rem;border-top:1px solid #00c8ff22;">"기술과 따뜻함으로 더 나은 내일을 만들겠습니다."</div>
+  </div></div>
+  <footer><span>pcuportfolio.kro.kr/9185 · 2026년 5월 8일</span><a href="https://pcu-startup.netlify.app" target="_blank">배재대학교 창업지원팀</a></footer>
+</body></html>
