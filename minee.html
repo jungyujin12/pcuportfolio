@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>지속적으로 성장하는 상담사가 되고 싶습니다(뭐래) | PCU Portfolio</title>
+  <meta name="description" content="심리상담학과 · 지속적으로 성장하는 상담사가 되고 싶습니다(뭐래)"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#fdf0ff;color:#1a0033;font-family:'Noto Sans KR',sans-serif;min-height:100vh}
+    .counsel-header{background:linear-gradient(135deg,#9b26af,#c94fdb);color:#fff;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+    .ch-name{font-size:1rem;font-weight:700;letter-spacing:0.05em}
+    .ch-sub{font-size:0.6rem;opacity:0.8}
+    .mind-hero{padding:3.5rem 3rem 2rem;text-align:center;position:relative}
+    .mh-badge{font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#9b26af;margin-bottom:1rem;display:block;font-weight:700}
+    .mh-center{display:inline-block;background:linear-gradient(135deg,#9b26af,#c94fdb);color:#fff;border-radius:50%;width:180px;height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 2rem;box-shadow:0 8px 32px rgba(155,38,175,0.25)}
+    .mh-id{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:0.04em;line-height:0.95}
+    .mh-sub{font-size:0.65rem;opacity:0.85;margin-top:0.3rem}
+    .mh-desc{font-size:0.92rem;color:#3a0055;line-height:1.75;max-width:500px;margin:0 auto 0.5rem;font-weight:300}
+    .mh-meta{font-size:0.7rem;color:#7a40a0;margin-bottom:2rem}
+    .bubble-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:700px;margin:0 auto;padding:0 2rem 2rem}
+    .bubble{background:#fff;border-radius:20px;padding:1.25rem 1.5rem;box-shadow:0 4px 16px rgba(155,38,175,0.08);border:1.5px solid #e8c8f8;position:relative}
+    .bubble::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:16px;height:16px;background:#ffca28;border-radius:50%}
+    .b-label{font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:#ffca28;margin-bottom:0.4rem;font-weight:700;margin-top:0.25rem}
+    .b-value{font-size:0.82rem;color:#2a0044;line-height:1.5}
+    .tags{display:flex;flex-wrap:wrap;gap:0.3rem}
+    .tag{background:#f5e8ff;font-size:0.7rem;padding:0.15rem 0.55rem;border-radius:999px;color:#7a00aa}
+    .kws{display:flex;gap:0.3rem;flex-wrap:wrap;justify-content:center;margin:0.5rem 0 1rem}
+    .kw{font-size:0.7rem;background:#9b26af;color:#fff;padding:0.22rem 0.7rem;border-radius:999px;font-weight:700}
+    footer{padding:1.25rem 2rem;font-size:0.65rem;color:#b080c0;display:flex;justify-content:space-between;border-top:1px solid #e8c8f8}
+    footer a{color:#9b26af;text-decoration:none}
+    @media(max-width:600px){.bubble-grid{grid-template-columns:1fr 1fr}.mind-hero{padding:2.5rem 1.5rem 1.5rem}}
+  </style>
+</head><body>
+  <div class="counsel-header">
+    <div class="ch-name">💜 상담센터 포트폴리오</div>
+    <div class="ch-sub">상담센터 스타일</div>
+  </div>
+  <div class="mind-hero">
+    <span class="mh-badge">MIND MAP PORTFOLIO · 마인드맵 포트폴리오</span>
+    <div class="mh-center">
+      <div class="mh-id">minee</div>
+      <div class="mh-sub">심리상담학과</div>
+    </div>
+    <div class="mh-desc">지속적으로 성장하는 상담사가 되고 싶습니다(뭐래)</div>
+    <div class="mh-meta">심리상담학과 · 아이디어형 · 2026년 5월 8일</div>
+    <div class="kws"><span class="kw">#기획력</span><span class="kw">#창의성</span><span class="kw">#미래지향</span></div>
+  </div>
+  <div class="bubble-grid">
+    <div class="bubble"><div class="b-label">관심 분야</div><div class="tags"><span class="tag">디자인·예술</span><span class="tag">교육·코칭</span><span class="tag">사회·복지</span></div></div>
+    <div class="bubble"><div class="b-label">강점 스타일</div><div class="b-value">아이디어형</div></div>
+    <div class="bubble"><div class="b-label">롤모델 기업</div><div class="b-value">상담센터</div></div>
+  </div>
+  
+  <style>
+    .pcu-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;cursor:pointer;}
+    .pcu-modal-overlay.active{display:flex;}
+    .pcu-modal-img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px;cursor:default;}
+    .pcu-modal-close{position:fixed;top:1.25rem;right:1.5rem;color:#fff;font-size:2rem;cursor:pointer;opacity:0.8;line-height:1;z-index:10000;}
+    .pcu-modal-prev,.pcu-modal-next{position:fixed;top:50%;transform:translateY(-50%);color:#fff;font-size:2.5rem;cursor:pointer;opacity:0.7;z-index:10000;padding:0.5rem;user-select:none;}
+    .pcu-modal-prev{left:1rem;} .pcu-modal-next{right:1rem;}
+    .pcu-clickable{cursor:zoom-in;}
+  </style>
+  <div class="pcu-modal-overlay" id="pcuModal" onclick="pcuModalClose(event)">
+    <span class="pcu-modal-close" onclick="pcuModalHide()">×</span>
+    <span class="pcu-modal-prev" onclick="pcuModalPrev(event)">‹</span>
+    <img class="pcu-modal-img" id="pcuModalImg" src="" alt="사진"/>
+    <span class="pcu-modal-next" onclick="pcuModalNext(event)">›</span>
+  </div>
+  <script>
+    var _pcuPhotos = [], _pcuIdx = 0;
+    function pcuOpenModal(idx) {
+      _pcuIdx = idx;
+      document.getElementById('pcuModalImg').src = _pcuPhotos[idx];
+      document.getElementById('pcuModal').classList.add('active');
+    }
+    function pcuModalHide() { document.getElementById('pcuModal').classList.remove('active'); }
+    function pcuModalClose(e) { if(e.target===document.getElementById('pcuModal')) pcuModalHide(); }
+    function pcuModalPrev(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx-1+_pcuPhotos.length)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    function pcuModalNext(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx+1)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') pcuModalHide(); if(e.key==='ArrowLeft') pcuModalPrev(e); if(e.key==='ArrowRight') pcuModalNext(e); });
+  </script><div class="extra-sections" style="padding-bottom:3rem;">
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;display:flex;flex-wrap:wrap;gap:0.75rem;">
+    <div style="flex:1;min-width:180px;border-left:3px solid #ffca28;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#ffca28;margin-bottom:0.4rem;font-weight:700">관심 분야</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.3rem;"><span class="tag">디자인·예술</span><span class="tag">교육·코칭</span><span class="tag">사회·복지</span></div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #ffca28;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#ffca28;margin-bottom:0.4rem;font-weight:700">강점 스타일</div>
+      <div style="font-size:0.88rem;opacity:0.9;">아이디어형</div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #ffca28;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#ffca28;margin-bottom:0.4rem;font-weight:700">롤모델 기업</div>
+      <div style="font-size:0.88rem;opacity:0.9;">상담센터</div>
+    </div>
+  </div>
+    <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem;font-family:'Noto Sans KR',sans-serif;">
+      <div style="font-size:0.58rem;letter-spacing:0.15em;color:#ffca28;margin-bottom:0.6rem;font-weight:700">나를 움직이는 것</div>
+      <div style="font-size:0.92rem;line-height:1.9;color:inherit;opacity:0.88;white-space:pre-line;padding:1.25rem;background:#ffca2808;border-radius:12px;border:1px solid #ffca2822;">청년의 진로 고민에 귀를 기울이는 상담가가 되고 싶습니다. 자격증, 진단도구, 실무 경험을 통해 진정한 진로 조력자로 성장해왔습니다.</div>
+    </div>
+    <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem;font-family:'Noto Sans KR',sans-serif;">
+      <div style="font-size:0.58rem;letter-spacing:0.15em;color:#ffca28;margin-bottom:0.75rem;font-weight:700">함께한 순간들</div>
+      <div style="font-size:0.88rem;line-height:1.9;opacity:0.88;white-space:pre-line;border-left:3px solid #ffca2844;padding-left:1rem;">- 고립은둔청년 심리지원상담 봉사활동
+  누군가의 작은 변화를 함께 만들어갑니다</div>
+    </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#ffca28;margin-bottom:0.6rem;font-weight:700">내가 가진 것들</div>
+    <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+      <span style="background:#ffca2815;border:1px solid #ffca2844;font-size:0.78rem;padding:0.25rem 0.7rem;border-radius:3px;color:#ffca28;font-weight:600;">직업상담사</span><span style="background:#ffca2815;border:1px solid #ffca2844;font-size:0.78rem;padding:0.25rem 0.7rem;border-radius:3px;color:#ffca28;font-weight:600;">청년진로지도사</span><span style="background:#ffca2815;border:1px solid #ffca2844;font-size:0.78rem;padding:0.25rem 0.7rem;border-radius:3px;color:#ffca28;font-weight:600;">한국사</span>
+    </div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #ffca28;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#ffca28;margin-bottom:0.4rem;font-weight:700">가고 싶은 곳</div>
+    <div style="font-size:1.1rem;font-weight:700;opacity:0.92">청년 맞춤형 진로상담 전문가</div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem 0;font-family:'Noto Sans KR',sans-serif;text-align:center;">
+    <div style="font-size:0.92rem;color:#ffca28;font-style:italic;opacity:0.85;padding:1.25rem;border-top:1px solid #ffca2822;">"흔들리는 마음에 방향을 제시하는 상담가가 되겠습니다."</div>
+  </div></div>
+  <footer><span>pcuportfolio.kro.kr/minee · 2026년 5월 8일</span><a href="https://pcu-startup.netlify.app" target="_blank">배재대학교 창업지원팀</a></footer>
+</body></html>
