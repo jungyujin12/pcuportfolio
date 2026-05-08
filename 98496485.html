@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>데이터로 부넛ㄱ하는분석가 | PCU Portfolio</title>
+  <meta name="description" content="소프트웨어공학부 - 컴퓨터공학전공 · 데이터로 부넛ㄱ하는분석가"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#000d1a;color:#e8f0fe;font-family:'Noto Sans KR',sans-serif;min-height:100vh}
+    .hero{min-height:60vh;display:flex;flex-direction:column;justify-content:flex-end;padding:5rem 4rem 4rem;background:linear-gradient(160deg,#000d1a 0%,#001529 60%,#001f3d 100%);position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(135deg,transparent,#1428a011);pointer-events:none}
+    .hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:linear-gradient(90deg,#1428a0,#2563eb,#1428a0)}
+    .badge{font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:#00c8ff;margin-bottom:2rem;display:block;opacity:0.8}
+    .hero-tagline{font-size:0.8rem;color:#4a6080;margin-bottom:0.5rem;letter-spacing:0.05em}
+    .hero-id{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,14vw,10rem);color:#fff;letter-spacing:0.02em;line-height:0.88;text-shadow:0 0 100px #1428a033}
+    .hero-desc{font-size:1.1rem;font-weight:300;margin-top:1.5rem;opacity:0.75;max-width:520px;line-height:1.5}
+    .hero-meta{font-size:0.7rem;color:#2563eb;margin-top:1rem;letter-spacing:0.15em;text-transform:uppercase}
+    .body{max-width:900px;margin:0 auto;padding:3rem 4rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#001529}
+    .card{background:#000d1a;padding:2rem 2.5rem}
+    .card-label{font-size:0.55rem;letter-spacing:0.25em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.75rem;opacity:0.8}
+    .card-value{font-size:0.9rem;line-height:1.7;opacity:0.8}
+    .tags{display:flex;flex-wrap:wrap;gap:0.35rem}
+    .tag{background:#001e2e;border:1px solid #00c8ff33;font-size:0.72rem;padding:0.2rem 0.65rem;color:#00c8ff}
+    .kws{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.75rem}
+    .kw{font-size:0.68rem;color:#00c8ff;font-weight:700;letter-spacing:0.08em}
+    footer{padding:2rem 4rem;font-size:0.65rem;color:#1e3a5f;display:flex;justify-content:space-between;border-top:1px solid #001529}
+    footer a{color:#00c8ff;text-decoration:none;opacity:0.6}
+    @media(max-width:700px){.hero{padding:4rem 1.5rem 3rem}.body{grid-template-columns:1fr;padding:2rem 1.5rem}.card{padding:1.5rem}.footer{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <span class="badge">PCU PORTFOLIO</span>
+    <div class="hero-tagline">기술로 세상의 문제를 해결하는</div>
+    <div class="hero-id">데이터로 부넛ㄱ하는분석가</div>
+    <div class="hero-desc" style="font-size:0.8rem;opacity:0.5;margin-top:0.5rem;letter-spacing:0.05em">98496485</div>
+    <div class="hero-meta">소프트웨어공학부 - 컴퓨터공학전공 · 아이디어형</div>
+    <div style="font-size:0.82rem;color:#00c8ff;margin-top:0.5rem;font-style:italic;opacity:0.85">"데이터로 세상을 읽는 엔지니어"</div>
+    <div style="font-size:0.92rem;opacity:0.7;margin-top:0.4rem;font-weight:300;font-style:italic">기술로 더 나은 내일을 설계합니다</div>
+    <div class="kws"><span class="kw">#기획력</span><span class="kw">#창의성</span><span class="kw">#미래지향</span></div>
+  </div>
+  <div class="body">
+    <div class="card"><div class="card-label">전공</div><div class="card-value">소프트웨어공학부 - 컴퓨터공학전공</div></div>
+  </div>
+  
+  <style>
+    .pcu-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;cursor:pointer;}
+    .pcu-modal-overlay.active{display:flex;}
+    .pcu-modal-img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:4px;cursor:default;}
+    .pcu-modal-close{position:fixed;top:1.25rem;right:1.5rem;color:#fff;font-size:2rem;cursor:pointer;opacity:0.8;line-height:1;z-index:10000;}
+    .pcu-modal-prev,.pcu-modal-next{position:fixed;top:50%;transform:translateY(-50%);color:#fff;font-size:2.5rem;cursor:pointer;opacity:0.7;z-index:10000;padding:0.5rem;user-select:none;}
+    .pcu-modal-prev{left:1rem;} .pcu-modal-next{right:1rem;}
+    .pcu-clickable{cursor:zoom-in;}
+  </style>
+  <div class="pcu-modal-overlay" id="pcuModal" onclick="pcuModalClose(event)">
+    <span class="pcu-modal-close" onclick="pcuModalHide()">×</span>
+    <span class="pcu-modal-prev" onclick="pcuModalPrev(event)">‹</span>
+    <img class="pcu-modal-img" id="pcuModalImg" src="" alt="사진"/>
+    <span class="pcu-modal-next" onclick="pcuModalNext(event)">›</span>
+  </div>
+  <script>
+    var _pcuPhotos = [], _pcuIdx = 0;
+    function pcuOpenModal(idx) {
+      _pcuIdx = idx;
+      document.getElementById('pcuModalImg').src = _pcuPhotos[idx];
+      document.getElementById('pcuModal').classList.add('active');
+    }
+    function pcuModalHide() { document.getElementById('pcuModal').classList.remove('active'); }
+    function pcuModalClose(e) { if(e.target===document.getElementById('pcuModal')) pcuModalHide(); }
+    function pcuModalPrev(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx-1+_pcuPhotos.length)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    function pcuModalNext(e) { e.stopPropagation(); _pcuIdx=(_pcuIdx+1)%_pcuPhotos.length; document.getElementById('pcuModalImg').src=_pcuPhotos[_pcuIdx]; }
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') pcuModalHide(); if(e.key==='ArrowLeft') pcuModalPrev(e); if(e.key==='ArrowRight') pcuModalNext(e); });
+  </script><div class="extra-sections" style="padding-bottom:3rem;">
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;display:flex;flex-wrap:wrap;gap:0.75rem;">
+    <div style="flex:1;min-width:180px;border-left:3px solid #00c8ff;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.4rem;font-weight:700">관심 분야</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.3rem;"><span class="tag">IT·개발</span><span class="tag">헬스케어</span><span class="tag">금융·투자</span></div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #00c8ff;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.4rem;font-weight:700">강점 스타일</div>
+      <div style="font-size:0.88rem;opacity:0.9;">아이디어형</div>
+    </div>
+    <div style="flex:1;min-width:120px;border-left:3px solid #00c8ff;padding:0.75rem 1rem;">
+      <div style="font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.4rem;font-weight:700">롤모델 기업</div>
+      <div style="font-size:0.88rem;opacity:0.9;">삼성전자</div>
+    </div>
+  </div>
+    <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00c8ff;">
+      <div style="font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.75rem;font-weight:700;opacity:0.8">내 무기들</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+        <span style="background:#00c8ff18;border:1px solid #00c8ff44;font-size:0.78rem;padding:0.22rem 0.65rem;color:#00c8ff;font-weight:600;letter-spacing:0.04em;">파이썬고급 자바고급 또래상담사 자격증 창직지도사2급 응급구조사 자격증 창업지도사2급</span>
+      </div>
+    </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.25rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00c8ff;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.4rem;font-weight:700">나아갈 방향</div>
+    <div style="font-size:1.1rem;font-weight:700;opacity:0.92">지정바람</div>
+  </div>
+  <div style="max-width:720px;margin:0 auto;padding:1.5rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00c8ff;">
+    <div style="font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.6rem;font-weight:700">함께한 시간들</div>
+    <div style="font-size:0.88rem;line-height:1.8;opacity:0.88;white-space:pre-line;">- 배재대 창업지원팀2년재직
+- 개발경력6년
+- 또래상담사 3년</div>
+  </div>
+    <div style="max-width:720px;margin:0 auto;padding:1.75rem 2.5rem;font-family:'Noto Sans KR',sans-serif;border-left:3px solid #00c8ff;">
+      <div style="font-size:0.5rem;letter-spacing:0.3em;text-transform:uppercase;color:#00c8ff;margin-bottom:0.6rem;font-weight:700;opacity:0.8">나를 움직이는 것</div>
+      <div style="font-size:0.9rem;line-height:1.8;opacity:0.85;white-space:pre-line">데이터 분석의 가능성에 매료된 개발자입니다. IT·헬스케어·금융 등 다양한 분야에서 데이터 기반 솔루션을 만들며 혁신에 기여하고 싶습니다.</div>
+    </div></div>
+  <footer><span>pcuportfolio.kro.kr/98496485 · 2026년 5월 8일</span><a href="https://pcu-startup.netlify.app" target="_blank">배재대학교 창업지원팀</a></footer>
+</body></html>
